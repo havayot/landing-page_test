@@ -11,6 +11,52 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>חוויות בטבע - טכנולוגיה, מוזיקה ואתגר</title>
   <style>
+  .activity-link {
+  text-decoration: none; /* מסיר קו תחתון */
+  display: inline-block; /* כך שהקישורים יתנהגו כמו בלוקים */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* מוסיף אפקט של שינוי */
+	}
+
+	.activity-link:hover .activity {
+	  transform: scale(1.05); /* מגדיל את הכפתור כשהם על-hover */
+	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* מוסיף צל */
+	}
+
+	.activity-link:active .activity {
+	  transform: scale(0.98); /* מקטין את הכפתור קלות בזמן לחיצה */
+	}
+
+	.activity {
+	  background-color: #fff; /* צבע רקע בהיר */
+	  padding: 20px;
+	  border-radius: 10px;
+	  border: 2px solid #ddd; /* קו מסביב לכפתור */
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  transition: all 0.2s ease;
+	}
+
+	.activity:hover {
+	  cursor: pointer; /* מראה שהכפתור נגיש */
+	  background-color: #f4f4f4; /* צבע רקע קל כשעוברים עליו */
+	}
+
+	.activity-icon {
+	  font-size: 40px;
+	  margin-bottom: 10px;
+	}
+
+	h2 {
+	  margin: 10px 0;
+	}
+
+	.price {
+	  margin-top: 10px;
+	  font-size: 18px;
+	  font-weight: bold;
+	}
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f8f4; }
     header, footer { background-color: #4CAF50; color: white; text-align: center; padding: 1rem; }
     .logo { font-size: 2rem; font-weight: bold; }
@@ -69,7 +115,8 @@
     <p>חוויות חברתיות בטבע – טכנולוגיה, מוזיקה ואתגר במקום אחד!</p>
   </header>
 
-  <div class="section">
+<div class="section">
+  <a href="trivia.html" class="activity-link">
     <div class="activity">
       <span class="material-icons activity-icon">quiz</span>
       <div>
@@ -78,6 +125,9 @@
         <p class="price">₪500</p>
       </div>
     </div>
+  </a>
+  
+  <a href="activity2.html" class="activity-link">
     <div class="activity">
       <span class="material-icons activity-icon">mic</span>
       <div>
@@ -86,56 +136,66 @@
         <p class="price">₪600</p>
       </div>
     </div>
+  </a>
+  
+  <a href="activity3.html" class="activity-link">
     <div class="activity">
       <span class="material-icons activity-icon">elderly_woman</span>
       <div>
-	  <h2>השכרת מתנפחים ומכונת שערות סבתא</h2>
-	  <p>השכרת מתנפחים לפי דגם לבחירה (כולל מתנפחים עם ציורים ואזורי קפיצה) ומכונת שערות סבתא לאירועים. מושלם לאירועים פתוחים, ימי הולדת, בר/בת מצווה ועוד.</p>
-	  <p class="price">₪800</p>
-	  </div>
+        <h2>השכרת מתנפחים ומכונת שערות סבתא</h2>
+        <p>השכרת מתנפחים לפי דגם לבחירה (כולל מתנפחים עם ציורים ואזורי קפיצה) ומכונת שערות סבתא לאירועים. מושלם לאירועים פתוחים, ימי הולדת, בר/בת מצווה ועוד.</p>
+        <p class="price">₪800</p>
+      </div>
     </div>
+  </a>
+  
+  <a href="Silent_Sound.html" class="activity-link">
     <div class="activity">
-	  <span class="material-icons activity-icon">headphones</span>
-	  <div>
-	    <h2>מסיבת Silent Sound – מסיבה שקטה עם אוזניות</h2>
-	    <p>
-	      חוויה מוזיקלית ייחודית בה כל משתתפת מקבלת אוזניות אלחוטיות עם תאורה צבעונית ובחירה בין ערוצי מוזיקה שונים.
-	      מתאים לבת מצווה, מסיבת יום הולדת או פעילות גיבוש מקורית – ללא רעש לסביבה וללא הפרעה לשכנים!
-	    </p>
-	    <p class="price">₪800</p>
-	  </div>
-	</div>
+      <span class="material-icons activity-icon">headphones</span>
+      <div>
+        <h2>מסיבת Silent Sound – מסיבה שקטה עם אוזניות</h2>
+        <p>חוויה מוזיקלית ייחודית בה כל משתתפת מקבלת אוזניות אלחוטיות עם תאורה צבעונית ובחירה בין ערוצי מוזיקה שונים. מתאים לבת מצווה, מסיבת יום הולדת או פעילות גיבוש מקורית – ללא רעש לסביבה וללא הפרעה לשכנים!</p>
+        <p class="price">₪800</p>
+      </div>
+    </div>
+  </a>
+  
+  <a href="activity5.html" class="activity-link">
     <div class="activity">
       <span class="material-icons activity-icon">star</span>
       <div>
-	  <h2>הכוכב הבא</h2>
-	  <p>תחרות שירה, כל זמר מקבל ניקוד מכל המשתתפים באמצעות שלטים ייחודים שמקבל כל משתתף - עד מציאת הקול הבא שבחבורה - ערב מצחיק ומהנה!</p>
-	  <p class="price">₪600</p>
-	  </div>
+        <h2>הכוכב הבא</h2>
+        <p>תחרות שירה, כל זמר מקבל ניקוד מכל המשתתפים באמצעות שלטים ייחודים שמקבל כל משתתף - עד מציאת הקול הבא שבחבורה - ערב מצחיק ומהנה!</p>
+        <p class="price">₪600</p>
+      </div>
     </div>
+  </a>
+  
+  <a href="activity6.html" class="activity-link">
     <div class="activity">
       <span class="material-icons activity-icon">forest</span>
       <div>
-	  <h2>אומגה 30 מטר</h2>
-	  <p>אומגה להתקנה מהירה וקלה ובטיחותית - 6 mm כבל מתכת, הילדים בטוח שיהנו מכל רגע, ואתם תהנו מקצת שקט :) להתקנה בין 2 עצים </p>
-	  <p class="price">₪300</p>
-	  </div>
+        <h2>אומגה 30 מטר</h2>
+        <p>אומגה להתקנה מהירה וקלה ובטיחותית - 6 mm כבל מתכת, הילדים בטוח שיהנו מכל רגע, ואתם תהנו מקצת שקט :) להתקנה בין 2 עצים</p>
+        <p class="price">₪300</p>
+      </div>
     </div>
+  </a>
+  
+  <a href="activity7.html" class="activity-link">
     <div class="activity">
-	  <span class="material-icons activity-icon">location_on</span>
-	  <div>
-	    <h2>משחקי מציאות רבודה (AR) בשטח עירוני</h2>
-	    <p>
-	      חוויה דיגיטלית חוץ-מקומית בסגנון פוקימון גו – עם משימות קבוצתיות, סיפורי הרפתקה מותאמים אישית, ואתגרי "צייד אוצרות" בזמן אמת!
-	      כל משתתפת משתמשת בטלפון החכם כדי לגלות רמזים, לאסוף פרסים ולהתקדם יחד עם הקבוצה ברחבי העיר.
-	      מושלם לבת מצווה או יום הולדת בסגנון הרפתקני ואינטראקטיבי!
-	    </p>
-	    <p>
-	      <strong>ציוד נדרש:</strong> טלפונים חכמים עם תמיכה בטכנולוגיית AR (אנדרואיד 9 ומעלה או iPhone 8 ומעלה), גישה לאינטרנט סלולרי, ואפליקציה ייעודית שתותקן מראש (אנו נדאג להכל!).
-	    </p>
-	    <p class="price">₪800</p>
-	  </div>
-   </div>
+      <span class="material-icons activity-icon">location_on</span>
+      <div>
+        <h2>משחקי מציאות רבודה (AR) בשטח עירוני</h2>
+        <p>חוויה דיגיטלית חוץ-מקומית בסגנון פוקימון גו – עם משימות קבוצתיות, סיפורי הרפתקה מותאמים אישית, ואתגרי "צייד אוצרות" בזמן אמת! כל משתתפת משתמשת בטלפון החכם כדי לגלות רמזים, לאסוף פרסים ולהתקדם יחד עם הקבוצה ברחבי העיר. מושלם לבת מצווה או יום הולדת בסגנון הרפתקני ואינטראקטיבי!</p>
+        <p><strong>ציוד נדרש:</strong> טלפונים חכמים עם תמיכה בטכנולוגיית AR (אנדרואיד 9 ומעלה או iPhone 8 ומעלה), גישה לאינטרנט סלולרי, ואפליקציה ייעודית שתותקן מראש (אנו נדאג להכל!).</p>
+        <p class="price">₪800</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+
 
     <div class="image-gallery" id="gallery">
       <img src="https://www.sound-check.co.il/wp-content/uploads/2020/03/stagepass_neo_syste656masada.jpg" alt="gallery-img">
