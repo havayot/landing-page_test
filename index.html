@@ -1,282 +1,844 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-<meta property="og:title" content="הנחה מיוחדת באתר שלנו!">
-<meta property="og:description" content="כנסו עכשיו ותיהנו ממבצע בלעדי!">
-<meta property="og:image" content="pic\logo2.jpg">
-<meta property="og:url" content="https://havayot.vercel.app">
-<meta property="og:type" content="website">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>חוויות בטבע - טכנולוגיה, מוזיקה ואתגר</title>
-  <style>
-  .activity-link {
-  text-decoration: none; /* מסיר קו תחתון */
-  display: inline-block; /* כך שהקישורים יתנהגו כמו בלוקים */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* מוסיף אפקט של שינוי */
-	}
-
-	.activity-link:hover .activity {
-	  transform: scale(1.05); /* מגדיל את הכפתור כשהם על-hover */
-	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* מוסיף צל */
-	}
-
-	.activity-link:active .activity {
-	  transform: scale(0.98); /* מקטין את הכפתור קלות בזמן לחיצה */
-	}
-
-	.activity {
-	  background-color: #fff; /* צבע רקע בהיר */
-	  padding: 20px;
-	  border-radius: 10px;
-	  border: 2px solid #ddd; /* קו מסביב לכפתור */
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
-	  justify-content: center;
-	  transition: all 0.2s ease;
-	}
-
-	.activity:hover {
-	  cursor: pointer; /* מראה שהכפתור נגיש */
-	  background-color: #f4f4f4; /* צבע רקע קל כשעוברים עליו */
-	}
-
-	.activity-icon {
-	  font-size: 40px;
-	  margin-bottom: 10px;
-	}
-
-	h2 {
-	  margin: 10px 0;
-	}
-
-	.price {
-	  margin-top: 10px;
-	  font-size: 18px;
-	  font-weight: bold;
-	}
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f8f4; }
-    header, footer { background-color: #4CAF50; color: white; text-align: center; padding: 1rem; }
-    .logo { font-size: 2rem; font-weight: bold; }
-    .section { padding: 2rem 1rem; max-width: 800px; margin: auto; }
-    .activity { background: white; margin: 1rem 0; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 1rem; }
-    .activity-icon { font-size: 2rem; margin-left: 0.5rem; }
-    h2 { color: #2e7d32; margin: 0; }
-    button {
-      background-color: #4CAF50; color: white; padding: 0.75rem 1.5rem;
-      border: none; border-radius: 5px; font-size: 1rem;
-      cursor: pointer; margin: 1rem 0;
-    }
-    button:hover { background-color: #388E3C; }
-    .image-gallery { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 1rem; }
-    .image-gallery img { width: 100px; height: 100px; object-fit: cover; border-radius: 8px; cursor: pointer; }
-    .contact-section { background-color: #e8f5e9; padding: 2rem 1rem; text-align: center; }
-    .contact-info { font-size: 1.1rem; margin-bottom: 1rem; }
-    a { color: #2e7d32; text-decoration: none; }
-    .price { color: #4CAF50; font-weight: bold; margin-top: 0.5rem; }
-    form { max-width: 400px; margin: auto; display: flex; flex-direction: column; gap: 0.5rem; }
-    input, textarea { padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; }
-    input[type="submit"] { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
-    input[type="submit"]:hover { background-color: #388E3C; }
-
-    /* Lightbox Styles */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 10px;
-    }
-    .lightbox .arrow {
-      color: white;
-      font-size: 3rem;
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .lightbox .arrow.left { right: auto; left: 2%; }
-    .lightbox .arrow.right { left: auto; right: 2%; }
-  </style>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טריוויה חוויתית - חידונים מותאמים אישית לכל אירוע</title>
+    <style>
+        :root {
+            --primary: #4c2882;
+            --secondary: #ff6b6b;
+            --accent: #ffd166;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #7e57c2);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-left: 8px;
+            font-size: 32px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-right: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .cta-button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .cta-button:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: url('/api/placeholder/1200/600') no-repeat center center/cover;
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(76, 40, 130, 0.7);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.3s;
+            animation-fill-mode: both;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            color: var(--primary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        
+        .feature-img {
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--primary);
+        }
+        
+        .feature-content {
+            padding: 24px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 22px;
+            color: var(--primary);
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .step {
+            width: 220px;
+            margin: 0 15px 30px;
+            text-align: center;
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+        }
+        
+        .step h3 {
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+        
+        /* Gallery */
+        .gallery {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 60px;
+            color: rgba(76, 40, 130, 0.1);
+            position: absolute;
+            top: -20px;
+            right: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 15px;
+            background-color: #e0e0e0;
+        }
+        
+        /* Contact Form */
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .contact-info {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item i {
+            margin-left: 15px;
+            font-size: 20px;
+        }
+        
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 40px;
+            border-radius: 12px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            display: flex;
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-nav {
+            margin: 20px 0;
+        }
+        
+        .footer-nav a {
+            color: #ddd;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-nav a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-card {
+                margin-bottom: 30px;
+            }
+            
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            /* Mobile Menu - Hamburger */
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 24px;
+                color: white;
+            }
+            
+            .mobile-nav {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 250px;
+                height: calc(100vh - 80px);
+                background-color: var(--primary);
+                transition: all 0.4s ease;
+                z-index: 1000;
+                padding: 20px;
+            }
+            
+            .mobile-nav.active {
+                right: 0;
+            }
+            
+            .mobile-nav a {
+                display: block;
+                color: white;
+                text-decoration: none;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 26px;
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>
-    <img src="pic\logo.png" alt="לוגו" width="150" />
-    <p>חוויות חברתיות בטבע – טכנולוגיה, מוזיקה ואתגר במקום אחד!</p>
-  </header>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/972555539793" class="whatsapp-float pulse" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-<div class="section">
-  <a href="trivia.html" class="activity-link">
-    <div class="activity">
-      <span class="material-icons activity-icon">quiz</span>
-      <div>
-        <h2>חידון טריוויה אינטראקטיבי</h2>
-        <p>עד 50 משתתפים. כל משתתף מקבל שלט אלחוטי לבחירת תשובה (א', ב', ג', ד'). השאלות מוקרנות על מסך גדול באמצעות מקרן. מתאים לימי הולדת, בר/בת מצווה וערבי צוות.</p>
-        <p class="price">₪500</p>
-      </div>
-    </div>
-  </a>
-  
-  <a href="activity2.html" class="activity-link">
-    <div class="activity">
-      <span class="material-icons activity-icon">mic</span>
-      <div>
-        <h2>קריוקי בטבע</h2>
-        <p>השכרת ערכת קריוקי מלאה הכוללת מקרן, רמקולים, מיקרופונים ופלייליסט עשיר. מושלם לאירועים פתוחים, ערבי שירה בציבור ומסיבות.</p>
-        <p class="price">₪600</p>
-      </div>
-    </div>
-  </a>
-  
-  <a href="activity3.html" class="activity-link">
-    <div class="activity">
-      <span class="material-icons activity-icon">elderly_woman</span>
-      <div>
-        <h2>השכרת מתנפחים ומכונת שערות סבתא</h2>
-        <p>השכרת מתנפחים לפי דגם לבחירה (כולל מתנפחים עם ציורים ואזורי קפיצה) ומכונת שערות סבתא לאירועים. מושלם לאירועים פתוחים, ימי הולדת, בר/בת מצווה ועוד.</p>
-        <p class="price">₪800</p>
-      </div>
-    </div>
-  </a>
-  
-  <a href="Silent_Sound.html" class="activity-link">
-    <div class="activity">
-      <span class="material-icons activity-icon">headphones</span>
-      <div>
-        <h2>מסיבת Silent Sound – מסיבה שקטה עם אוזניות</h2>
-        <p>חוויה מוזיקלית ייחודית בה כל משתתפת מקבלת אוזניות אלחוטיות עם תאורה צבעונית ובחירה בין ערוצי מוזיקה שונים. מתאים לבת מצווה, מסיבת יום הולדת או פעילות גיבוש מקורית – ללא רעש לסביבה וללא הפרעה לשכנים!</p>
-        <p class="price">₪800</p>
-      </div>
-    </div>
-  </a>
-  
-  <a href="activity5.html" class="activity-link">
-    <div class="activity">
-      <span class="material-icons activity-icon">star</span>
-      <div>
-        <h2>הכוכב הבא</h2>
-        <p>תחרות שירה, כל זמר מקבל ניקוד מכל המשתתפים באמצעות שלטים ייחודים שמקבל כל משתתף - עד מציאת הקול הבא שבחבורה - ערב מצחיק ומהנה!</p>
-        <p class="price">₪600</p>
-      </div>
-    </div>
-  </a>
-  
-  <a href="activity6.html" class="activity-link">
-    <div class="activity">
-      <span class="material-icons activity-icon">forest</span>
-      <div>
-        <h2>אומגה 30 מטר</h2>
-        <p>אומגה להתקנה מהירה וקלה ובטיחותית - 6 mm כבל מתכת, הילדים בטוח שיהנו מכל רגע, ואתם תהנו מקצת שקט :) להתקנה בין 2 עצים</p>
-        <p class="price">₪300</p>
-      </div>
-    </div>
-  </a>
-  
-  <a href="activity7.html" class="activity-link">
-    <div class="activity">
-      <span class="material-icons activity-icon">location_on</span>
-      <div>
-        <h2>משחקי מציאות רבודה (AR) בשטח עירוני</h2>
-        <p>חוויה דיגיטלית חוץ-מקומית בסגנון פוקימון גו – עם משימות קבוצתיות, סיפורי הרפתקה מותאמים אישית, ואתגרי "צייד אוצרות" בזמן אמת! כל משתתפת משתמשת בטלפון החכם כדי לגלות רמזים, לאסוף פרסים ולהתקדם יחד עם הקבוצה ברחבי העיר. מושלם לבת מצווה או יום הולדת בסגנון הרפתקני ואינטראקטיבי!</p>
-        <p><strong>ציוד נדרש:</strong> טלפונים חכמים עם תמיכה בטכנולוגיית AR (אנדרואיד 9 ומעלה או iPhone 8 ומעלה), גישה לאינטרנט סלולרי, ואפליקציה ייעודית שתותקן מראש (אנו נדאג להכל!).</p>
-        <p class="price">₪800</p>
-      </div>
-    </div>
-  </a>
-</div>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-gamepad"></i>
+                טריוויה חוויתית
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features" class="nav-link">מה אנחנו מציעים</a></li>
+                <li><a href="#how-it-works" class="nav-link">איך זה עובד</a></li>
+                <li><a href="#gallery" class="nav-link">גלריה</a></li>
+                <li><a href="#testimonials" class="nav-link">המלצות</a></li>
+                <li><a href="#contact" class="nav-link">צור קשר</a></li>
+            </ul>
+            <a href="#contact" class="cta-button nav-link">הזמן אירוע</a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+        <div class="mobile-nav">
+            <a href="#features" class="nav-link">מה אנחנו מציעים</a>
+            <a href="#how-it-works" class="nav-link">איך זה עובד</a>
+            <a href="#gallery" class="nav-link">גלריה</a>
+            <a href="#testimonials" class="nav-link">המלצות</a>
+            <a href="#contact" class="nav-link">צור קשר</a>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>חידוני טריוויה אינטראקטיביים מותאמים אישית לכל אירוע</h1>
+            <p>הפכו את האירוע שלכם לחוויה בלתי נשכחת עם חידוני טריוויה מרתקים ומותאמים אישית לחוגג/ת</p>
+            <a href="#contact" class="cta-button nav-link">צרו קשר עכשיו</a>
+        </div>
+    </section>
 
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">מה אנחנו מציעים</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>קליקרים אלחוטיים</h3>
+                        <p>כל משתתף מקבל קליקר אלחוטי אישי המאפשר לענות על שאלות בצורה אינטראקטיבית וחוויתית. עד 60 משתתפים יכולים להשתתף בו-זמנית!</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>הקרנה חיה על מסך</h3>
+                        <p>השאלות והתשובות מוקרנות על מסך גדול בעיצוב מרהיב ומלהיב, המאפשר לכולם לעקוב אחר המשחק ולהתרגש יחד.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <i class="fas fa-user-edit"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>התאמה אישית</h3>
+                        <p>כל משחק מותאם אישית לחוגג/ת ולאירוע שלכם, עם שאלות מותאמות במיוחד שמציבות את החוגג/ת במרכז תשומת הלב.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>טכנולוגיית AI</h3>
+                        <p>אנו משתמשים בכלי AI חדשניים כדי ליצור שאלות מותאמות אישית באופן מיוחד על בסיס המידע שתספקו לנו על החוגג/ת והמשפחה.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <i class="fas fa-photo-video"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>תמונות וסרטונים</h3>
+                        <p>שילוב תמונות וסרטונים אישיים בתוך השאלות והתשובות להעצמת החוויה ולהפיכת האירוע לזיכרון מתוק במיוחד.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>לכל הגילאים</h3>
+                        <p>החידונים שלנו מתאימים לכל המשפחה - מסבא וסבתא ועד הילדים הקטנים, ויוצרים אווירה משפחתית כיפית ומלכדת.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="image-gallery" id="gallery">
-      <img src="https://www.sound-check.co.il/wp-content/uploads/2020/03/stagepass_neo_syste656masada.jpg" alt="gallery-img">
-      <img src="https://soundshine.co.il/wp-content/uploads/2017/03/%D7%94%D7%A9%D7%9B%D7%A8%D7%AA-%D7%A7%D7%A8%D7%99%D7%95%D7%A7%D7%99-%D7%A1%D7%90%D7%95%D7%A0%D7%93%D7%A9%D7%99%D7%99%D7%9F-%D7%94%D7%A9%D7%9B%D7%A8%D7%AA-%D7%A6%D7%99%D7%95%D7%93-%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%95%D7%AA-500x500.jpg" alt="gallery-img">
-      <img src="pic\1.jpg" alt="תמונה" width="500">
-	  <img src="pic\2.jpg" alt="תמונה" width="500">
-	  <img src="pic\9.jpg" alt="תמונה" width="500">
-	  <img src="pic\3.jpg" alt="תמונה" width="500">
-	  <img src="pic\4.jpg" alt="תמונה" width="500">
-	  <img src="pic\5.jpg" alt="תמונה" width="500">
-	  <img src="pic\6.jpg" alt="תמונה" width="500">
-	  <img src="pic\7.jpg" alt="תמונה" width="500">
-	  <img src="pic\8.jpg" alt="תמונה" width="500">
-    </div>
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">איך זה עובד</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>1. יצירת קשר</h3>
+                    <p>פנו אלינו דרך הטופס באתר או בטלפון ונתאם פגישה ראשונית.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>2. פגישת התאמה</h3>
+                    <p>נפגש לשיחת התאמה לאירוע שלכם ונאסוף מידע על החוגג/ת והמשפחה.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>3. הכנת החידון</h3>
+                    <p>נבנה חידון מותאם אישית עם שאלות מותאמות, תמונות וסרטונים.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>4. אישור סופי</h3>
+                    <p>נשלח לכם את החידון לאישור סופי ונבצע התאמות נוספות לפי הצורך.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>5. יום האירוע</h3>
+                    <p>נגיע עם כל הציוד הנדרש, נתקין ונפעיל את החידון לחוויה בלתי נשכחת!</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div style="text-align: center;">
-      <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">
-        להזמנת פעילות
-      </button>
-    </div>
-  </div>
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">גלריה</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="אירוע טריוויה משפחתי">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="חידון בר מצווה">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="משתתפים עם קליקרים">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="הקרנת שאלות על מסך">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="אירוע טריוויה בת מצווה">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="משחק טריוויה משפחתי">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="אירוע בר מצווה">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="שמחה משפחתית עם טריוויה">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="contact-section" id="contact">
-    <h2>צור קשר</h2>
-    <p class="contact-info">
-      שם העסק: חוויות<br>
-      טלפון: <a href="tel:0501234567">055-5539793</a><br>
-      אימייל: <a href="Havayot@gmail.com">Havayot@gmail.com</a><br>
-      אינסטגרם: <a href="https://instagram.com">@havayot</a><br>
-    </p>
-    <form action="https://formspree.io/f/mvgkeebg" method="POST">
-      <input type="text" name="name" placeholder="שם מלא" required>
-      <input type="email" name="email" placeholder="אימייל" required>
-      <textarea name="message" placeholder="ההודעה שלך" rows="5" required></textarea>
-      <input type="submit" value="שלח הודעה">
-    </form>
-  </div>
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">המלצות</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>החידון שהותאם אישית לבר המצווה של הבן שלנו היה פשוט מדהים! כל האורחים - מבוגרים וילדים - נהנו מאוד והיה צחוק ושמחה לאורך כל הערב. הקליקרים הוסיפו נופך של תחרותיות בריאה ומשתפת.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img"></div>
+                        <div>
+                            <h4>משפחת כהן</h4>
+                            <p>בר מצווה</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>איזו חוויה בלתי נשכחת! הטריוויה הייתה שיא האירוע של יום ההולדת ה-70 לאבא שלי. השילוב של תמונות משפחתיות וזכרונות בחידון גרם להתרגשות גדולה. ממליצים בחום!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img"></div>
+                        <div>
+                            <h4>רונית לוי</h4>
+                            <p>יום הולדת 70</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>החלטנו לשלב טריוויה בבת המצווה של בתנו וזו הייתה ההחלטה הכי טובה! הילדים והמבוגרים נהנו באותה מידה, והשאלות שהותאמו אישית לבת שלנו גרמו לה להרגיש כמו כוכבת. התפעול היה מקצועי ביותר!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img"></div>
+                        <div>
+                            <h4>משפחת אברהם</h4>
+                            <p>בת מצווה</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2021 חוויות - כל הזכויות שמורות
-  </footer>
-
-  <div class="lightbox" id="lightbox">
-    <span class="arrow left" onclick="prevImage()">&#8592;</span>
-    <img id="lightbox-img" src="" alt="large view">
-    <span class="arrow right" onclick="nextImage()">&#8594;</span>
-  </div>
-
-  <script>
-    const images = Array.from(document.querySelectorAll('.image-gallery img'));
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    let currentIndex = 0;
-
-    images.forEach((img, index) => {
-      img.addEventListener('click', () => {
-        currentIndex = index;
-        showImage();
-      });
-    });
-
-    function showImage() {
-      lightbox.style.display = 'flex';
-      lightboxImg.src = images[currentIndex].src;
-    }
-
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      showImage();
-    }
-
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      showImage();
-    }
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
-  </script>
-</body>
-</html>
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">צרו קשר</h2>
+            <div class="form-container">
+                <div class="contact-info">
+                    <h3>רוצים לדעת עוד?</h3>
+                    <p>נשמח לענות על כל שאלה ולעזור לכם להפוך את האירוע שלכם לחוויה מיוחדת עם חידון טריוויה מותאם אישית.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>055-1234567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@trivia-events.co.il</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>ישראל, אזור המרכז</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>הזמינו אירוע</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">שם מלא</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">טלפון</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">דוא״ל</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-type">סוג אירוע</label>
+                            <select id="event-type" name="event-type" required>
+                                <option value="">בחרו סוג אירוע</option>
+                                <option value="bar-mitzvah">בר מצווה</option>
+                                <option value="bat-mitzvah">בת מצווה</option>
+                                <option value="birthday">יום הולדת</option>
+                                <option value="family">אירוע משפחתי</option>
+                                <option value="other">אחר</option
